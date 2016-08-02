@@ -1,51 +1,50 @@
-{
-  "name": "Sample Extension Commands extension",
-  "description": "Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup, press Ctrl+Shift+Y to send an event (Command+Shift+Y on a Mac).",
-  "version": "1.0",
-  "manifest_version": 2,
-  "background": {
-    "scripts": ["jquery-3.1.0.min.js", "background.js"],
-    "persistent": false
-  },
-  "permissions": [
-    "activeTab"
-  ],
-  "browser_action": {
-    "default_popup": "browser_action.html"
-  },
-  "content_scripts": [
-    {
-    "all_frames": false,
-    "matches": ["<all_urls>"],
-    "exclude_matches": [],
-      "js": ["jquery-3.1.0.min.js"]
-    }
-  ],
-  "commands": {
-    "toggle-feature": {
-      "suggested_key": { "default": "Ctrl+Shift+Y" },
-      "description": "Send a 'toggle-feature' event to the extension"
-    },
-    "A": {
-      "suggested_key": {
-        "default": "Alt+Shift+A",
-        "mac": "MacCtrl+Shift+A"
+{  
+   "name":"Sample Extension Commands extension",
+   "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup, press Ctrl+Shift+Y to send an event (Command+Shift+Y on a Mac).",
+   "version":"1.0",
+   "manifest_version":2,
+   "background":{  
+      "scripts":["jquery-3.1.0.min.js", "background.js"],
+      "persistent":false
+   },
+   "permissions":["tabs", "contextMenus"],
+   "browser_action":{  
+      "default_popup":"browser_action.html"
+   },
+   "content_scripts":[  
+      {  
+         "matches":["<all_urls>"],
+         "js":["jquery-3.1.0.min.js", "content.js"],
+         "run_at":"document_end"
+      }
+   ],
+   "commands":{
+      "_execute_browser_action":{  
+         "suggested_key":{  
+            "default":"Ctrl+Shift+A",
+            "mac":"MacCtrl+Shift+F"
+         }
       },
-      "description": "Ā"
-    },
-    "I": {
-      "suggested_key": {
-        "default": "Alt+Shift+I",
-        "mac": "MacCtrl+Shift+I"
+      "A":{  
+         "suggested_key":{  
+            "default":"Alt+Shift+A",
+            "mac":"MacCtrl+Shift+A"
+         },
+         "description":"Ā"
       },
-      "description": "Ī"
-    },
-    "U": {
-      "suggested_key": {
-        "default": "Alt+Shift+U",
-        "mac": "MacCtrl+Shift+U"
+      "I":{  
+         "suggested_key":{  
+            "default":"Alt+Shift+I",
+            "mac":"MacCtrl+Shift+I"
+         },
+         "description":"Ī"
       },
-      "description": "Ū"
-    }
-  }
+      "U":{  
+         "suggested_key":{  
+            "default":"Alt+Shift+U",
+            "mac":"MacCtrl+Shift+U"
+         },
+         "description":"Ū"
+      }
+   }
 }
