@@ -19,12 +19,6 @@
       }
    ],
    "commands":{
-      "_execute_browser_action":{  
-         "suggested_key":{  
-            "default":"Ctrl+Shift+A",
-            "mac":"MacCtrl+Shift+F"
-         }
-      },
       "A":{  
          "suggested_key":{  
             "default":"Alt+Shift+A",
@@ -45,6 +39,13 @@
             "mac":"MacCtrl+Shift+U"
          },
          "description":"Ū"
+      },
+      "X":{  
+         "suggested_key":{  
+            "default":"Alt+Shift+X",
+            "mac":"MacCtrl+Shift+X"
+         },
+         "description":"X"
       }
    }
 }

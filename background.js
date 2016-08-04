@@ -2,7 +2,6 @@ chrome.commands.onCommand.addListener(function(command) {
     switch (command) {
         case "A":
             sendToPrint("Ā");
-            getNextKey();
             break;
         case "I":
             sendToPrint("Ī");
@@ -10,11 +9,8 @@ chrome.commands.onCommand.addListener(function(command) {
         case "U":
             sendToPrint("Ū");
             break;
-        case "i":
-            sendToPrint("ī");
-            break;
-        case "u":
-            sendToPrint("ū");
+        case "X":
+            sendToPrint("X");
     }
 });
 
