@@ -24,12 +24,12 @@
           "default": "Ctrl+Shift+F",
           "mac": "MacCtrl+Shift+F"
        },
-       "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup."
+       "description":"Browser Popup."
        },
        "X":{  
          "suggested_key":{  
             "default":"Alt+Shift+X",
-            "mac":"MacCtrl+Shift+X"
+            "mac":"Alt+Shift+X"
          },
          "description":"Turn on Special Keyboard"
       }
