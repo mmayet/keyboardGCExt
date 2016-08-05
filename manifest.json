@@ -1,6 +1,6 @@
 {  
-   "name":"Sample Extension Commands extension",
-   "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup, press Ctrl+Shift+Y to send an event (Command+Shift+Y on a Mac).",
+   "name":"US-Arabic Transliteration Keyboard",
+   "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup, press Ctrl+Shift+X to start the keyboard on a webpage (Command+Shift+Y on a Mac).",
    "version":"1.0",
    "manifest_version":2,
    "background":{  
@@ -19,33 +19,39 @@
       }
    ],
    "commands":{
-      "A":{  
-         "suggested_key":{  
-            "default":"Alt+Shift+A",
-            "mac":"MacCtrl+Shift+A"
-         },
-         "description":"Ā"
-      },
-      "I":{  
-         "suggested_key":{  
-            "default":"Alt+Shift+I",
-            "mac":"MacCtrl+Shift+I"
-         },
-         "description":"Ī"
-      },
-      "U":{  
-         "suggested_key":{  
-            "default":"Alt+Shift+U",
-            "mac":"MacCtrl+Shift+U"
-         },
-         "description":"Ū"
-      },
-      "X":{  
+      "_execute_browser_action": {
+         "suggested_key": {
+          "default": "Ctrl+Shift+F",
+          "mac": "MacCtrl+Shift+F"
+       },
+       "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup."
+       },
+       "X":{  
          "suggested_key":{  
             "default":"Alt+Shift+X",
             "mac":"MacCtrl+Shift+X"
          },
-         "description":"X"
+         "description":"Turn on Special Keyboard"
       }
    }
 }
+
+/*
+   How to Use:
+   All non-standard inputs are accesible by using Ctrl+Alt or Shift+Ctrl+Alt.
+
+   Ctrl(CMD)+Alt+ 'Your Input':
+   '        - ʿ
+   a|i|u       - ā|ī|ū
+   d|h|s|t|z   - ḍ|ḥ|ṣ|ṭ|ẓ
+   b        - ﷽
+   g        - ﷻ
+   r        - ﷺ
+   p        - (ع)
+   c        - (Rḍ)
+
+   Shift(Caps On)+Ctrl(CMD)+Alt+ 'Your Input':
+   '        - ʾ
+   A|I|U       - Ā|Ī|Ū
+   D|H|S|T|Z   - Ḍ|Ḥ|Ṣ|Ṭ|Ẓ
+*/

@@ -8,14 +8,12 @@ document.addEventListener("mousedown", function(event) {
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        //console.log(sender.tab ? "From Script:" + sender.tab.url : "From Extension");
         var objField = document.getElementById(sID);
         if (request.letter == "X") {
-        	getNextKey(objField);
+            getNextKey(objField);
+        } else {
+            insertAtCursor(objField, request.letter);
         }
-		else {
-        	insertAtCursor(objField, request.letter);
-    	}
     });
 
 function insertAtCursor(sField, sValue) {
@@ -32,77 +30,30 @@ function insertAtCursor(sField, sValue) {
 }
 
 function getNextKey(objField) {
-	var toPrint;
-    console.log("In getNextKey 1");
+    var toPrint;
     $(document).on('keydown', function(e) {
-        console.log("In getNextKey 2");
-        var evtobj = window.event ? event : e
-        
-        /*switch (evtobj.keyCode) {
-        	case 65:
-        		toPrint = "ā";
-        		break;
-    		case 90:
-    			toPrint = "ẓ";
-    			break;
-			default:
-				toPrint = "";
-        }*/
-        if (evtobj.ctrlKey && evtobj.altKey && evtobj.keyCode == 222) {
-        	console.log("'");
-	    	toPrint = "ʿ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey && evtobj.keyCode == 222) {
-	    	console.log("'");
-	    	toPrint = "ʾ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.keyCode == 65) {
-	    	console.log("no shift");
-	    	toPrint = "ā";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey && evtobj.keyCode == 65) {
-	    	console.log("shift");
-	    	toPrint = "Ā";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.keyCode == 68) {
-	    	toPrint = "ḍ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey && evtobj.keyCode == 68) {
-	    	toPrint = "Ḍ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.keyCode == 72) {
-	    	toPrint = "ḥ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey && evtobj.keyCode == 72) {
-	    	toPrint = "Ḥ";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.keyCode == 73) {
-	    	toPrint = "ī";
-	    }
-	    else if (evtobj.ctrlKey && evtobj.altKey && evtobj.shiftKey && evtobj.keyCode == 73) {
-	    	toPrint = "Ī";
-	    }
-	    else {
-	    	toPrint = "";
-	    }
-        console.log(toPrint);
-        //insertAtCursor(objField, toPrint);
-        insertTextAtCursor(toPrint);
+        var evt = window.event ? event : e
 
+        if      ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 222 /*'*/ )      {   insertAtCursor(objField, "ʾ");   }
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 222 /*'*/ )                      {   insertAtCursor(objField, "ʿ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 65 /*'A'*/ )     {   insertAtCursor(objField, "Ā");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'a'*/ )                     {   insertAtCursor(objField, "ā");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 68 /*'D'*/ )     {   insertAtCursor(objField, "Ḍ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 68 /*'d'*/ )                     {   insertAtCursor(objField, "ḍ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 72 /*'H'*/ )     {   insertAtCursor(objField, "Ḥ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 72 /*'h'*/ )                     {   insertAtCursor(objField, "ḥ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 73 /*'I'*/ )     {   insertAtCursor(objField, "Ī");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 73 /*'i'*/ )                     {   insertAtCursor(objField, "ī");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 83 /*'S'*/ )     {   insertAtCursor(objField, "Ṣ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 83 /*'s'*/ )                     {   insertAtCursor(objField, "ṣ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 85 /*'U'*/ )     {   insertAtCursor(objField, "Ū");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 85 /*'u'*/ )                     {   insertAtCursor(objField, "ū");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 90 /*'Z'*/ )     {   insertAtCursor(objField, "Ẓ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 90 /*'z'*/ )                     {   insertAtCursor(objField, "ẓ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'b' for B-ism-Allāh*/ )     {   insertAtCursor(objField, "﷽");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ )  {   insertAtCursor(objField, "(Rḍ)");} 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ )           {   insertAtCursor(objField, "ﷻ");   } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 80 /*'p' for Prophet (ع)*/ )     {   insertAtCursor(objField, "(ع)"); } 
+        else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ )         {   insertAtCursor(objField, "ﷺ");   }
     });
-    console.log("out");
-}
-
-function insertTextAtCursor(text) {
-    var sel, range, html;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            range.insertNode( document.createTextNode(text) );
-        }
-    } else if (document.selection && document.selection.createRange) {
-        document.selection.createRange().text = text;
-    }
 }
