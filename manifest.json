@@ -35,23 +35,3 @@
       }
    }
 }
-
-/*
-   How to Use:
-   All non-standard inputs are accesible by using Ctrl+Alt or Shift+Ctrl+Alt.
-
-   Ctrl(CMD)+Alt+ 'Your Input':
-   '        - ʿ
-   a|i|u       - ā|ī|ū
-   d|h|s|t|z   - ḍ|ḥ|ṣ|ṭ|ẓ
-   b        - ﷽
-   g        - ﷻ
-   r        - ﷺ
-   p        - (ع)
-   c        - (Rḍ)
-
-   Shift(Caps On)+Ctrl(CMD)+Alt+ 'Your Input':
-   '        - ʾ
-   A|I|U       - Ā|Ī|Ū
-   D|H|S|T|Z   - Ḍ|Ḥ|Ṣ|Ṭ|Ẓ
-*/

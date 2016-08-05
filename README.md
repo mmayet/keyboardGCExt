@@ -1,6 +1,6 @@
 How to Use:
 
-1) Check if Chrome configured the extension correctly. go to chrome://extensions/configureCommands.
+1) Check if Chrome configured the extension correctly. Go to chrome://extensions/configureCommands.
 Select any shortcut for "Turn on Special Keyboard". This is how you will "enable" the keyboard in a webpage.
 
 2) Use the shortcut (i.e., Alt+Shift+X)
