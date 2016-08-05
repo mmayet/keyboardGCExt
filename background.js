@@ -1,4 +1,4 @@
-chrome.commands.onCommand.addListener(function(command) {   if (command == "X") startKeyboard("X"); });
+chrome.commands.onCommand.addListener(function(command) {	/*if (command == "_execute_browser_action")	startKeyboard("X");*/	});
 
 function startKeyboard(letter) {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {

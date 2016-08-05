@@ -10,16 +10,16 @@ document.getElementById("copyButton").addEventListener("click", function() {
     copyToClipboard(document.getElementById("baID"));
 });
 
-function insertAtCursor(sField, sValue) {
-    if (sField.selectionStart || sField.selectionStart == '0') {
-        var nStart = sField.selectionStart;
-        var nEnd = sField.selectionEnd;
+function insertAtCursor(crt, sValue) {
+    if (crt.selectionStart || crt.selectionStart == '0') {
+        var nStart = crt.selectionStart;
+        var nEnd = crt.selectionEnd;
 
-        sField.value = sField.value.substring(0, nStart) + sValue + sField.value.substring(nEnd, sField.value.length);
-        sField.selectionStart = nStart + sValue.length;
-        sField.selectionEnd = nStart + sValue.length;
+        crt.value = crt.value.substring(0, nStart) + sValue + crt.value.substring(nEnd, crt.value.length);
+        crt.selectionStart = nStart + sValue.length;
+        crt.selectionEnd = nStart + sValue.length;
     } else {
-        sField.value += sValue;
+        crt.value += sValue;
     }
 }
 
@@ -46,17 +46,17 @@ function copyToClipboard(elem) {
     var currentFocus = document.activeElement;
     target.focus();
     target.setSelectionRange(0, target.value.length);
-    
+
     var succeed;
     try {
-          succeed = document.execCommand("copy");
-    } catch(e) {
+        succeed = document.execCommand("copy");
+    } catch (e) {
         succeed = false;
     }
     if (currentFocus && typeof currentFocus.focus === "function") {
         currentFocus.focus();
     }
-    
+
     if (isInput) {
         elem.setSelectionRange(origSelectionStart, origSelectionEnd);
     } else {
@@ -66,28 +66,28 @@ function copyToClipboard(elem) {
 }
 
 $('#baID').on('keydown', function(e) {
-    var objField = document.getElementById(sID);
+    var crt = document.getElementById(sID);
     var evt = window.event ? event : e
 
-    if      ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 222 /*'*/ )      {   insertAtCursor(objField, "ʾ");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 222 /*'*/ )                      {   insertAtCursor(objField, "ʿ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 65 /*'A'*/ )     {   insertAtCursor(objField, "Ā");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'a'*/ )                     {   insertAtCursor(objField, "ā");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 68 /*'D'*/ )     {   insertAtCursor(objField, "Ḍ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 68 /*'d'*/ )                     {   insertAtCursor(objField, "ḍ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 72 /*'H'*/ )     {   insertAtCursor(objField, "Ḥ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 72 /*'h'*/ )                     {   insertAtCursor(objField, "ḥ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 73 /*'I'*/ )     {   insertAtCursor(objField, "Ī");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 73 /*'i'*/ )                     {   insertAtCursor(objField, "ī");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 83 /*'S'*/ )     {   insertAtCursor(objField, "Ṣ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 83 /*'s'*/ )                     {   insertAtCursor(objField, "ṣ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 85 /*'U'*/ )     {   insertAtCursor(objField, "Ū");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 85 /*'u'*/ )                     {   insertAtCursor(objField, "ū");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 90 /*'Z'*/ )     {   insertAtCursor(objField, "Ẓ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 90 /*'z'*/ )                     {   insertAtCursor(objField, "ẓ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'b' for B-ism-Allāh*/ )     {   insertAtCursor(objField, "﷽");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ )  {   insertAtCursor(objField, "(Rḍ)");} 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ )           {   insertAtCursor(objField, "ﷻ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 80 /*'p' for Prophet (ع)*/ )     {   insertAtCursor(objField, "(ع)"); } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ )         {   insertAtCursor(objField, "ﷺ");   }
+    if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 222 /*'*/ ) { insertAtCursor(crt, "ʾ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 222 /*'*/ ) { insertAtCursor(crt, "ʿ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 65 /*'A'*/ ) { insertAtCursor(crt, "Ā"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'a'*/ ) { insertAtCursor(crt, "ā"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 68 /*'D'*/ ) { insertAtCursor(crt, "Ḍ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 68 /*'d'*/ ) { insertAtCursor(crt, "ḍ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 72 /*'H'*/ ) { insertAtCursor(crt, "Ḥ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 72 /*'h'*/ ) { insertAtCursor(crt, "ḥ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 73 /*'I'*/ ) { insertAtCursor(crt, "Ī"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 73 /*'i'*/ ) { insertAtCursor(crt, "ī"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 83 /*'S'*/ ) { insertAtCursor(crt, "Ṣ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 83 /*'s'*/ ) { insertAtCursor(crt, "ṣ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 85 /*'U'*/ ) { insertAtCursor(crt, "Ū"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 85 /*'u'*/ ) { insertAtCursor(crt, "ū"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 90 /*'Z'*/ ) { insertAtCursor(crt, "Ẓ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 90 /*'z'*/ ) { insertAtCursor(crt, "ẓ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'b' for B-ism-Allāh*/ ) { insertAtCursor(crt, "﷽"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ ) { insertAtCursor(crt, "(Rḍ)"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ ) { insertAtCursor(crt, "ﷻ"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 80 /*'p' for Prophet (ع)*/ ) { insertAtCursor(crt, "(ع)"); } 
+    else if ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ ) { insertAtCursor(crt, "ﷺ"); }
 });

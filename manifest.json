@@ -1,6 +1,6 @@
 {  
    "name":"US-Arabic Transliteration Keyboard",
-   "description":"Press Ctrl+Shift+F (Command+Shift+F on a Mac) to open the browser action popup, press Ctrl+Shift+X to start the keyboard on a webpage (Command+Shift+Y on a Mac).",
+   "description":"Keyboard that lets you type with Arabic Transliteration. For quick words, use Alt+Shift+X, and copy what you type!",
    "version":"1.0",
    "manifest_version":2,
    "background":{  
@@ -21,17 +21,10 @@
    "commands":{
       "_execute_browser_action": {
          "suggested_key": {
-          "default": "Ctrl+Shift+F",
-          "mac": "MacCtrl+Shift+F"
+          "default": "Alt+Shift+X",
+          "mac": "Alt+Shift+X"
        },
-       "description":"Browser Popup."
-       },
-       "X":{  
-         "suggested_key":{  
-            "default":"Alt+Shift+X",
-            "mac":"Alt+Shift+X"
-         },
-         "description":"Turn on Special Keyboard"
-      }
+       "description":"Popup Shortcut."
+       }
    }
 }
