@@ -1,35 +1,15 @@
-Installation:
+<h1>Installation:</h1>
 
-Download/Clone to a folder on your local machine. Go to Chrome Extensions and turn Developer Mode "On". Drag and drop the <em>Unzipped</em> folder.
-
-###########################################
-
-Note:
-Many websites do not allow this Extension to run (i.e., GMail, Inbox, Google Docs — we're working on this!). In this case, you can use the Extension pop-up in the top right corner (or press Alt+Shift+X — note: this key is reconfiguarable at chrome://extensions/configureCommands) to type there. You can then copy and paste the word or letter right into your document.
+<h4>Download/Clone to a folder on your local machine. Go to Chrome Extensions and turn Developer Mode "On". Drag and drop the <em>Unzipped</em> folder.</h4>
 
 ###########################################
-How to Use:
-Turn on the Keyboard: Alt+Shift+X
 
-All non-standard inputs are accesible by using Ctrl(Cmd)+Alt or Shift+Ctrl(Cmd)+Alt.
+<h2>Note:</h2>
+<h5>Many websites do not allow this Extension to run (i.e., GMail, Inbox, Google Docs — we're working on this!). In this case, you can use the Extension pop-up in the top right corner (or press Alt+Shift+X — note: this key is reconfiguarable at chrome://extensions/configureCommands) to type there. You can then copy and paste the word or letter right into your document.</h5>
 
-Ctrl(Cmd)+Alt+ 'Your Input':  </br>
-'        - ʿ                  </br>
--		 - —				  </br>
-a|i|u       - ā|ī|ū           </br>
-d|h|s|t|z   - ḍ|ḥ|ṣ|ṭ|ẓ       </br>
-b        - ﷽   </br>        
-g        - ﷻ                  </br>
-r        - ﷺ                  </br>
-p        - (ع)                </br>
-c        - (Rḍ)               </br>
-
-Shift+Ctrl(Cmd)+Alt+ 'Your Input': </br>
-'        - ʾ                </br>
-A|I|U       - Ā|Ī|Ū         </br>
-D|H|S|T|Z   - Ḍ|Ḥ|Ṣ|Ṭ|Ẓ     </br>
-
-<h4>How To:</h4>
+###########################################
+<h1>How To:</h1>
+<h4>All non-standard inputs are accesible by using Ctrl(Cmd)+Alt or Shift+Ctrl(Cmd)+Alt.</h4>
 <table>
     <thead>
         <tr>
