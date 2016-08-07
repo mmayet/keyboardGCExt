@@ -30,78 +30,74 @@ A|I|U       - Ā|Ī|Ū         </br>
 D|H|S|T|Z   - Ḍ|Ḥ|Ṣ|Ṭ|Ẓ     </br>
 
 <h4>How To:</h4>
-                            <div>
-                                <table class="bordered striped responsive-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="">Shortcut</th>
-                                            <th>Key</th>
-                                            <th>Result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>'</td>
-                                            <td>ʿ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt+Shift +</td>
-                                            <td>'</td>
-                                            <td>ʾ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>-</td>
-                                            <td>—</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>a | i | u</td>
-                                            <td>ā | ī | ū</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>d | h | s | t | z</td>
-                                            <td>ḍ | ḥ | ṣ | ṭ | ẓ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt+Shift +</td>
-                                            <td>A | U | I</td>
-                                            <td>Ā | Ī | Ū</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt+Shift +</td>
-                                            <td>D | H | S | T | Z</td>
-                                            <td>Ḍ | Ḥ | Ṣ | Ṭ | Ẓ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>b</td>
-                                            <td>﷽</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>c</td>
-                                            <td>(Rḍ)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>g</td>
-                                            <td>ﷻ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>p</td>
-                                            <td>(ع)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="">Ctrl(Cmd)+Alt +</td>
-                                            <td>r</td>
-                                            <td>ﷺ</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+<table>
+    <thead>
+        <tr>
+            <th>Shortcut</th>
+            <th>Key</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ctrl(Cmd)+Alt +</td>
+            <td>'</td>
+            <td>ʿ</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt+Shift +</td>
+            <td>'</td>
+            <td>ʾ</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>-</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>a | i | u</td>
+            <td>ā | ī | ū</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>d | h | s | t | z</td>
+            <td>ḍ | ḥ | ṣ | ṭ | ẓ</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt+Shift +</td>
+            <td>A | U | I</td>
+            <td>Ā | Ī | Ū</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt+Shift +</td>
+            <td>D | H | S | T | Z</td>
+            <td>Ḍ | Ḥ | Ṣ | Ṭ | Ẓ</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>b</td>
+            <td>﷽</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>c</td>
+            <td>(Rḍ)</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>g</td>
+            <td>ﷻ</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>p</td>
+            <td>(ع)</td>
+        </tr>
+        <tr>
+            <td >Ctrl(Cmd)+Alt +</td>
+            <td>r</td>
+            <td>ﷺ</td>
+        </tr>
+    </tbody>
+</table>
