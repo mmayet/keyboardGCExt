@@ -90,6 +90,6 @@ $('#baID').on('keydown', function(e) {
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ )  {   insertAtCursor(crt, "(Rḍ)");} 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ )           {   insertAtCursor(crt, "ﷻ");   } 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 80 /*'p' for Prophet (ع)*/ )     {   insertAtCursor(crt, "(ع)"); } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ )         {   insertAtCursor(crt, "ﷺ");   }
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 82 /*'R'*/ )     {   insertAtCursor(crt, "💚");   }
+    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ )         {   insertAtCursor(crt, "ﷺ");   }
 });
