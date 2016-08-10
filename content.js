@@ -1,5 +1,5 @@
 var sID = "";
-document.addEventListener("mousedown", function(event) {
+document.addEventListener("focus", function(event) {
         var el = event.target;
         sID = el.id;
     },

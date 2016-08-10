@@ -2,7 +2,7 @@
     "name": "Arabic Typist",
     "short_name": "US-ARTr",
     "description": "Keyboard that lets you type with Arabic Transliteration. For quick words, use Alt+Shift+X, and copy what you type!",
-    "version": "1.1",
+    "version": "1.2",
     "manifest_version": 2,
     "background": {
         "scripts": ["jquery-3.1.0.min.js", "background.js"],
