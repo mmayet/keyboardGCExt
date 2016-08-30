@@ -85,7 +85,7 @@ $('#baID').on('keydown', function(e) {
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 85 /*'u'*/ )                     {   insertAtCursor(crt, "ū");   } 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 90 /*'Z'*/ )     {   insertAtCursor(crt, "Ẓ");   } 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 90 /*'z'*/ )                     {   insertAtCursor(crt, "ẓ");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 45 /*'-' for em dash*/ )         {   insertAtCursor(crt, "—");   }
+    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.code == "Minus" /*'-' for em dash*/ )       {   insertAtCursor(crt, "—");   }
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'b' for B-ism-Allāh*/ )     {   insertAtCursor(crt, "﷽");   } 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ )  {   insertAtCursor(crt, "(Rḍ)");} 
     else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ )           {   insertAtCursor(crt, "ﷻ");   } 
