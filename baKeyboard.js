@@ -65,31 +65,40 @@ function copyToClipboard(elem) {
     return succeed;
 }
 
+function isAltGr(evt) {
+    return ((evt.ctrlKey || evt.metaKey) && evt.altKey);
+}
+
+function isAltGrShift(evt) {
+    return ((evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey);
+}
+
 $('#baID').on('keydown', function(e) {
+    //e.preventDefault();
     var crt = document.getElementById(sID);
     var evt = window.event ? event : e
 
-    if      ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 222 /*'*/ )      {   insertAtCursor(crt, "ʾ");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 222 /*'*/ )                      {   insertAtCursor(crt, "ʿ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 65 /*'A'*/ )     {   insertAtCursor(crt, "Ā");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'a'*/ )                     {   insertAtCursor(crt, "ā");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 68 /*'D'*/ )     {   insertAtCursor(crt, "Ḍ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 68 /*'d'*/ )                     {   insertAtCursor(crt, "ḍ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 72 /*'H'*/ )     {   insertAtCursor(crt, "Ḥ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 72 /*'h'*/ )                     {   insertAtCursor(crt, "ḥ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 73 /*'I'*/ )     {   insertAtCursor(crt, "Ī");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 73 /*'i'*/ )                     {   insertAtCursor(crt, "ī");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 83 /*'S'*/ )     {   insertAtCursor(crt, "Ṣ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 83 /*'s'*/ )                     {   insertAtCursor(crt, "ṣ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 85 /*'U'*/ )     {   insertAtCursor(crt, "Ū");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 85 /*'u'*/ )                     {   insertAtCursor(crt, "ū");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 90 /*'Z'*/ )     {   insertAtCursor(crt, "Ẓ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 90 /*'z'*/ )                     {   insertAtCursor(crt, "ẓ");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.code == "Minus" /*'-' for em dash*/ )       {   insertAtCursor(crt, "—");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 65 /*'b' for B-ism-Allāh*/ )     {   insertAtCursor(crt, "﷽");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 67 /*'C' for Companion (Rḍ)*/ )  {   insertAtCursor(crt, "(Rḍ)");} 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 71 /*'g' for God ﷻ*/ )           {   insertAtCursor(crt, "ﷻ");   } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 80 /*'p' for Prophet (ع)*/ )     {   insertAtCursor(crt, "(ع)"); } 
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.shiftKey && evt.keyCode == 82 /*'R'*/ )     {   insertAtCursor(crt, "💚");   }
-    else if ( (evt.ctrlKey || evt.metaKey) && evt.altKey && evt.keyCode == 82 /*'r' for Rasūl ﷺ*/ )         {   insertAtCursor(crt, "ﷺ");   }
+    if      (isAltGrShift(evt) && evt.keyCode == 222       /*'*/                       ) {  insertAtCursor(crt, "ʾ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 222       /*'*/                       ) {  insertAtCursor(crt, "ʿ");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 65        /*'A'*/                     ) {  insertAtCursor(crt, "Ā");      }
+    else if (isAltGr(evt)      && evt.keyCode == 65        /*'a'*/                     ) {  insertAtCursor(crt, "ā");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 68        /*'D'*/                     ) {  insertAtCursor(crt, "Ḍ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 68        /*'d'*/                     ) {  insertAtCursor(crt, "ḍ");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 72        /*'H'*/                     ) {  insertAtCursor(crt, "Ḥ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 72        /*'h'*/                     ) {  insertAtCursor(crt, "ḥ");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 73        /*'I'*/                     ) {  insertAtCursor(crt, "Ī");      }
+    else if (isAltGr(evt)      && evt.keyCode == 73        /*'i'*/                     ) {  insertAtCursor(crt, "ī");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 83        /*'S'*/                     ) {  insertAtCursor(crt, "Ṣ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 83        /*'s'*/                     ) {  insertAtCursor(crt, "ṣ");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 85        /*'U'*/                     ) {  insertAtCursor(crt, "Ū");      }
+    else if (isAltGr(evt)      && evt.keyCode == 85        /*'u'*/                     ) {  insertAtCursor(crt, "ū");      }
+    else if (isAltGrShift(evt) && evt.keyCode == 90        /*'Z'*/                     ) {  insertAtCursor(crt, "Ẓ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 90        /*'z'*/                     ) {  insertAtCursor(crt, "ẓ");      }
+    else if (isAltGr(evt)      && evt.code    == "Minus"   /*'-' for em dash*/         ) {  insertAtCursor(crt, "—");      }
+    else if (isAltGr(evt)      && evt.keyCode == 65        /*'b' for B-ism-Allāh*/     ) {  insertAtCursor(crt, "﷽");      }
+    else if (isAltGr(evt)      && evt.keyCode == 67        /*'C' for Companion (Rḍ)*/  ) {  insertAtCursor(crt, "(Rḍ)");   }
+    else if (isAltGr(evt)      && evt.keyCode == 71        /*'g' for God ﷻ*/           ) {  insertAtCursor(crt, "ﷻ");      }
+    else if (isAltGr(evt)      && evt.keyCode == 80        /*'p' for Prophet (ع)*/     ) {  insertAtCursor(crt, "(ع)");    }
+    else if (isAltGrShift(evt) && evt.keyCode == 82        /*'R'*/                     ) {  insertAtCursor(crt, "💚");      }
+    else if (isAltGr(evt)      && evt.keyCode == 82        /*'r' for Rasūl ﷺ*/         ) {  insertAtCursor(crt, "ﷺ");      }
 });
